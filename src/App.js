@@ -1,24 +1,72 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Sidebar from './Sidebar';
 import './App.css';
+import LicenseTable from './L4.js';
 
 function App() {
+  const licenses = [
+    {
+      domain: "https://eduspark.world",
+      description: "Basics of STEM Collection",
+      package: "Basics of STEM Collection",
+      status: "Active"
+    },
+    {
+      domain: "https://www.w3schools.com",
+      description: "Human Body",
+      package: "Basics of STEM Collection - Updated",
+      status: "Inactive"
+    },
+    {
+      domain: "https://app.gather.town",
+      description: "Basics of STEM Collection",
+      package: "Basics of STEM Collection",
+      status: "Active"
+    },
+    {
+      domain: "https://aisl-academy.com",
+      description: "Asia International School Limited (AISL)",
+      package: "Basics of STEM Collection",
+      status: "Active"
+    },
+    {
+      domain: "https://studio.aisl-academy.com",
+      description: "Asia International School Limited (AISL)",
+      package: "Basics of STEM Collection",
+      status: "Active"
+    },
+    {
+      domain: "https://lms.dreamtimelearningsystem.com",
+      description: "Dreamtime Learning",
+      package: "Basics of STEM Collection",
+      status: "Active"
+    },
+    {
+      domain: "https://hologo.world",
+      description: "Katbook 1",
+      package: "Human Body",
+      status: "Active"
+    },
+    {
+      domain: "https://katbook.com",
+      description: "Katbook 2",
+      package: "Basics of STEM Collection",
+      status: "Inactive"
+    }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div style={{ display: 'flex', height: '100vh' }}>
+        <Sidebar />
+        <div className="main-content"> {/* Add this div */}
+          <Routes>
+            <Route path="/licenses" element={<LicenseTable licenses={licenses} />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 

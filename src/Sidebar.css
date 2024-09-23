@@ -1,0 +1,37 @@
+.sidebar {
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .sidebar li:hover {
+    background-color: #e2e2e2;
+    color: rgb(232, 131, 0);
+  }
+  
+  .sidebar li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .sidebar li a:hover {
+    color: rgb(232, 131, 0);
+  }
+  
