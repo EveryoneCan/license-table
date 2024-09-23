@@ -1,193 +1,242 @@
 .license-table {
-    position: relative; 
-  }
-  
-  .search-container {
-    margin-bottom: 20px;
-    text-align: right;
-  }
-  
-  .search-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 250px;
-    transition: border-color 0.3s ease;
-  }
-  
-  .search-input:focus {
-    border-color: rgb(232, 131, 0);
-    outline: none;
-  }
-  .search-container {
-    margin-bottom: 20px;
-    text-align: left;
-  }
+  position: relative; 
+}
 
-  
-  .overlay {
-    position: absolute;
-    background: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-    top: 0; 
-    left: 0;
-  }
-  
-  td {
-    position: relative;
-  }
-  /* Add this to your existing CSS file */
+.search-container {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: rgb(232, 131, 0);
+  outline: none;
+}
+.search-container {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+
+.overlay {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  top: 0; 
+  left: 0;
+}
+
+td {
+  position: relative;
+}
+/* Add this to your existing CSS file */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px; /* Space above the table */
-  }
-  
-  th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: white;
-    color: black;
-    font-weight: bold;
-  }
-  
-  tr:hover {
-    background-color: #f5f5f5; /* Change row color on hover */
-  }
-  
- 
-  .create-license-container {
-    margin: 20px 0; /* Space above and below the create button */
-  }
-  
-  .menu-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
-  .white-overlay {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background: white;
-    border: 2px solid rgb(232, 131, 0);
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    width: 400px; /* Fixed width for better alignment */
-    max-width: 90%; /* Responsive width */
-  }
-  
-  .white-overlay h3 {
-    margin-bottom: 20px;
-    color: rgb(232, 131, 0);
-    text-align: center; /* Center the title */
-  }
-  
-  .white-overlay label {
-    display: block;
-    margin: 10px 0 5px; /* Margin around labels */
-    font-weight: bold; /* Bold for better visibility */
-  }
-  
-  .white-overlay input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; /* Ensure padding is included in width */
-  }
-  
-  .white-overlay button {
-    margin-top: 15px; /* Space above buttons */
-    padding: 10px 15px;
-    background-color: rgb(232, 131, 0);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s, transform 0.3s; /* Add transition */
-    width: calc(50% - 5px); /* Responsive button width */
-    display: inline-block; /* Allow buttons to sit next to each other */
-  }
-  
-  .white-overlay button:hover {
-    background-color: orange;
-    color: white;
-    transform: scale(1.05); /* Slightly increase size on hover */
-  }
-  
-  .white-overlay .cancel-button {
-    background-color: #f44336; /* Red color for cancel */
-  }
-  
-  .white-overlay .cancel-button:hover {
-    background-color: #e57373; /* Lighter red on hover */
-  }
-  .white-overlay button:not(:last-child) {
-    margin-right: 10px; /* Space between buttons */
-  }
-  
-  
-  .close-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2em;
-    color: #ff0000;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-  }
-  
-  .create-license-container {
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    text-align: right;
-  }
-  
-  .create-license-button {
-    padding: 10px 15px;
-    background-color:  rgb(232, 131, 0);
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .create-license-button:hover {
-    background-color: orange;
-    color: white;
-  }
-  
-  .action-button {
-    padding: 10px 15px;
-    background-color: white;
-    color: black;
-    border: white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-right: 10px; /* Space between action buttons */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
-  }
-  
-  .action-button:hover {
-    background-color: rgb(244, 240, 240);
-    color: black;
-  }
-  
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Space above the table */
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f5f5f5; /* Change row color on hover */
+}
+
+
+.create-license-container {
+  margin: 20px 0;
+}
+
+.menu-button {
+  background: transparent; 
+  border: none; 
+  cursor: pointer;
+  font-size: 16px; 
+  transform: rotate(90deg); 
+  transform-origin: center;
+}
+
+
+.white-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: white;
+  border: 2px solid rgb(232, 131, 0);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  width: 400px; /* Fixed width for better alignment */
+  max-width: 90%; /* Responsive width */
+}
+
+.white-overlay .close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: black;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
+.white-overlay h3 {
+  margin-bottom: 20px;
+  color: rgb(232, 131, 0);
+  text-align: center; /* Center the title */
+}
+
+.white-overlay label {
+  display: block;
+  margin: 10px 0 5px; /* Margin around labels */
+  font-weight: bold; /* Bold for better visibility */
+}
+
+.white-overlay input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.white-overlay .save-button {
+  margin-top: 15px; /* Space above buttons */
+  padding: 10px 15px;
+  background-color: rgb(232, 131, 0);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.3s; /* Add transition */
+  width: calc(50% - 5px); /* Responsive button width */
+  display: inline-block; /* Allow buttons to sit next to each other */
+}
+
+.white-overlay .save-button:hover {
+  background-color: orange;
+  color: white;
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: black;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+
+.create-license-container {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: right;
+}
+
+.create-license-button {
+  padding: 10px 15px;
+  background-color:  rgb(232, 131, 0);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.create-license-button:hover {
+  background-color: orange;
+  color: white;
+}
+
+.action-button {
+  padding: 10px 15px;
+  background-color: white;
+  color: black;
+  border: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px; /* Space between action buttons */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.action-button:hover {
+  background-color: rgb(244, 240, 240);
+  color: black;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: rgb(232, 131, 0);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}

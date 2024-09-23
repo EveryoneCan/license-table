@@ -13,7 +13,7 @@ const LicenseTable = ({ licenses }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleEdit = (index) => {
-    setCurrentLicense({ ...licensesState[index], status: licensesState[index].status === 'Active' });
+    setCurrentLicense(licensesState[index]);
     setIsWhiteOverlayVisible(true);
   };
 
@@ -57,31 +57,21 @@ const LicenseTable = ({ licenses }) => {
     }));
   };
 
-  const handleStatusToggle = () => {
-    setCurrentLicense((prev) => ({
-      ...prev,
-      status: !prev.status,
-    }));
-  };
-
   const handleOverlaySave = () => {
     if (currentLicense) {
-      handleSave({
-        ...currentLicense,
-        status: currentLicense.status ? 'Active' : 'Inactive',
-      });
+      handleSave(currentLicense);
     }
   };
 
   const handleCreate = () => {
-    setCurrentLicense({ domain: '', description: '', package: '', status: false });
+    setCurrentLicense({ domain: '', description: '', package: '', status: '' });
     setIsCreating(true);
     setIsWhiteOverlayVisible(true);
   };
 
   const handleCreateSave = () => {
     if (currentLicense) {
-      setLicensesState([...licensesState, { ...currentLicense, status: currentLicense.status ? 'Active' : 'Inactive' }]);
+      setLicensesState([...licensesState, currentLicense]);
       setIsCreating(false);
       setIsWhiteOverlayVisible(false);
     }
@@ -91,7 +81,7 @@ const LicenseTable = ({ licenses }) => {
     setSearchTerm(e.target.value);
   };
 
-  const filteredLicenses = licensesState.filter(license =>
+  const filteredLicenses = licensesState.filter(license => 
     license.domain.toLowerCase().includes(searchTerm.toLowerCase()) ||
     license.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
     license.package.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -102,11 +92,11 @@ const LicenseTable = ({ licenses }) => {
     <div className="license-table">
       <h2>Licenses</h2>
       <div className="search-container">
-        <input
-          type="text"
-          placeholder="Search licenses..."
-          value={searchTerm}
-          onChange={handleSearchChange}
+        <input 
+          type="text" 
+          placeholder="Search licenses..." 
+          value={searchTerm} 
+          onChange={handleSearchChange} 
           className="search-input"
         />
       </div>
@@ -148,39 +138,16 @@ const LicenseTable = ({ licenses }) => {
         </tbody>
       </table>
       {isWhiteOverlayVisible && currentLicense && (
-  <div className="white-overlay">
-    <button className="close-button" onClick={() => setIsWhiteOverlayVisible(false)}>
-      <FontAwesomeIcon icon={faTimes} />
-    </button>
-    <h3 style={{ color: 'black' }}>{isCreating ? "Create New License" : "Edit License Details"}</h3>
-    <label>
-      Domain 
-      <input 
-        type="text" 
-        name="domain" 
-        value={currentLicense.domain} 
-        onChange={handleChange} 
-        disabled={!isCreating} // Disable when not creating a new license
-      />
-    </label>
-    <label>
-      Description 
-      <input type="text" name="description" value={currentLicense.description} onChange={handleChange} />
-    </label>
-    <label>
-      Select the package of the domain 
-      <input type="text" name="package" value={currentLicense.package} onChange={handleChange} />
-    </label>
-    <label>Status: 
-      <label className="toggle-switch">
-        <input type="checkbox" checked={currentLicense.status} onChange={handleStatusToggle} />
-        <span className="slider" />
-      </label>
-    </label>
-    <button className="save-button" onClick={isCreating ? handleCreateSave : handleOverlaySave}>Save</button>
-  </div>
-)}
-
+        <div className="white-overlay">
+          <h3 style={{ color: 'black' }}>{isCreating ? "Create New License" : "Edit License Details"}</h3>
+          <label>Domain: <input type="text" name="domain" value={currentLicense.domain} onChange={handleChange} /></label>
+          <label>Description: <input type="text" name="description" value={currentLicense.description} onChange={handleChange} /></label>
+          <label>Package: <input type="text" name="package" value={currentLicense.package} onChange={handleChange} /></label>
+          <label>Status: <input type="text" name="status" value={currentLicense.status} onChange={handleChange} /></label>
+          <button onClick={isCreating ? handleCreateSave : handleOverlaySave}>Save</button>
+          <button onClick={() => setIsWhiteOverlayVisible(false)}>Cancel</button>
+        </div>
+      )}
     </div>
   );
 };
