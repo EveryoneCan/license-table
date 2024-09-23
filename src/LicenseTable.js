@@ -160,7 +160,7 @@ const LicenseTable = ({ licenses }) => {
         name="domain" 
         value={currentLicense.domain} 
         onChange={handleChange} 
-        disabled={!isCreating} // Disable when not creating a new license
+        disabled={!isCreating}
       />
     </label>
     <label>

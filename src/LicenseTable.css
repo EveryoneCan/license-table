@@ -24,7 +24,6 @@
   text-align: left;
 }
 
-
 .overlay {
   position: absolute;
   background: white;
@@ -39,11 +38,11 @@
 td {
   position: relative;
 }
-/* Add this to your existing CSS file */
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px; /* Space above the table */
+  margin-top: 20px; 
 }
 
 th, td {
@@ -59,9 +58,8 @@ th {
 }
 
 tr:hover {
-  background-color: #f5f5f5; /* Change row color on hover */
+  background-color: #f5f5f5; 
 }
-
 
 .create-license-container {
   margin: 20px 0;
@@ -88,8 +86,8 @@ tr:hover {
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   z-index: 1000;
-  width: 400px; /* Fixed width for better alignment */
-  max-width: 90%; /* Responsive width */
+  width: 400px;
+  max-width: 90%;
 }
 
 .white-overlay .close-button {
@@ -107,13 +105,13 @@ tr:hover {
 .white-overlay h3 {
   margin-bottom: 20px;
   color: rgb(232, 131, 0);
-  text-align: center; /* Center the title */
+  text-align: center;
 }
 
 .white-overlay label {
   display: block;
-  margin: 10px 0 5px; /* Margin around labels */
-  font-weight: bold; /* Bold for better visibility */
+  margin: 10px 0 5px;
+  font-weight: bold;
 }
 
 .white-overlay input {
@@ -121,11 +119,11 @@ tr:hover {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box; /* Ensure padding is included in width */
+  box-sizing: border-box;
 }
 
 .white-overlay .save-button {
-  margin-top: 15px; /* Space above buttons */
+  margin-top: 15px;
   padding: 10px 15px;
   background-color: rgb(232, 131, 0);
   color: white;
@@ -133,17 +131,16 @@ tr:hover {
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
-  transition: background-color 0.3s, transform 0.3s; /* Add transition */
-  width: calc(50% - 5px); /* Responsive button width */
-  display: inline-block; /* Allow buttons to sit next to each other */
+  transition: background-color 0.3s, transform 0.3s;
+  width: calc(50% - 5px);
+  display: inline-block;
 }
 
 .white-overlay .save-button:hover {
   background-color: orange;
   color: white;
-  transform: scale(1.05); /* Slightly increase size on hover */
+  transform: scale(1.05);
 }
-
 
 .close-button {
   background: none;
@@ -187,8 +184,8 @@ tr:hover {
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
-  margin-right: 10px; /* Space between action buttons */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .action-button:hover {
