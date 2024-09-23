@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import './App.css';
-import LicenseTable from './L4.js';
+import LicenseTable from './LicenseTable.js';
 
 function App() {
   const licenses = [

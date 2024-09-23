@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import './L3.css';
+import './LicenseTable.css';
 
 const LicenseTable = ({ licenses }) => {
   const [licensesState, setLicensesState] = useState(licenses);
@@ -77,12 +77,10 @@ const LicenseTable = ({ licenses }) => {
     }
   };
 
-  // Handle search input change
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  // Filter licenses based on search term
   const filteredLicenses = licensesState.filter(license => 
     license.domain.toLowerCase().includes(searchTerm.toLowerCase()) ||
     license.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -99,10 +97,11 @@ const LicenseTable = ({ licenses }) => {
           placeholder="Search licenses..." 
           value={searchTerm} 
           onChange={handleSearchChange} 
+          className="search-input"
         />
       </div>
       <div className="create-license-container">
-        <button onClick={handleCreate} className="create-license-button">Create a License</button>
+        <button onClick={handleCreate} className="create-license-button">New License</button>
       </div>
       <table>
         <thead>
@@ -125,9 +124,9 @@ const LicenseTable = ({ licenses }) => {
                 <button onClick={() => toggleOverlay(index)} className="menu-button">•••</button>
                 {activeIndex === index && (
                   <div className="overlay">
-                    <button onClick={() => handleEdit(index)}>Edit</button>
-                    <button onClick={() => handleDownload(index)}>Download</button>
-                    <button onClick={() => handleDelete(index)}>Delete</button>
+                    <button className="action-button" onClick={() => handleEdit(index)}>Edit</button>
+                    <button className="action-button" onClick={() => handleDownload(index)}>Download</button>
+                    <button className="action-button" onClick={() => handleDelete(index)}>Delete</button>
                     <button className="close-button" onClick={() => toggleOverlay(index)}>
                       <FontAwesomeIcon icon={faTimes} />
                     </button>
@@ -141,51 +140,12 @@ const LicenseTable = ({ licenses }) => {
       {isWhiteOverlayVisible && currentLicense && (
         <div className="white-overlay">
           <h3 style={{ color: 'black' }}>{isCreating ? "Create New License" : "Edit License Details"}</h3>
-          <label>
-            Domain:
-            <input 
-              type="text" 
-              name="domain" 
-              value={currentLicense.domain} 
-              onChange={handleChange} 
-              required 
-            />
-          </label>
-          <br/>
-          <label>
-            Description:
-            <input 
-              type="text" 
-              name="description" 
-              value={currentLicense.description} 
-              onChange={handleChange} 
-            />
-          </label>
-          <br/>
-          <label>
-            Package:
-            <input 
-              type="text" 
-              name="package" 
-              value={currentLicense.package} 
-              onChange={handleChange} 
-            />
-          </label>
-          <br/>
-          <label>
-            Status:
-            <input 
-              type="text" 
-              name="status" 
-              value={currentLicense.status} 
-              onChange={handleChange} 
-            />
-          </label>
-          <br/>
-          <button onClick={isCreating ? handleCreateSave : handleOverlaySave}>
-            {isCreating ? "Create" : "Save"}
-          </button>
-          <button onClick={() => setIsWhiteOverlayVisible(false)}>Close</button>
+          <label>Domain: <input type="text" name="domain" value={currentLicense.domain} onChange={handleChange} /></label>
+          <label>Description: <input type="text" name="description" value={currentLicense.description} onChange={handleChange} /></label>
+          <label>Package: <input type="text" name="package" value={currentLicense.package} onChange={handleChange} /></label>
+          <label>Status: <input type="text" name="status" value={currentLicense.status} onChange={handleChange} /></label>
+          <button onClick={isCreating ? handleCreateSave : handleOverlaySave}>Save</button>
+          <button onClick={() => setIsWhiteOverlayVisible(false)}>Cancel</button>
         </div>
       )}
     </div>
